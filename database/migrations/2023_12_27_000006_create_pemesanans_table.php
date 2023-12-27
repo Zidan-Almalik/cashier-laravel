@@ -10,13 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pemesanans', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('remember_token', 100)->nullable();
+            $table->date('tanggal_pemesanan');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
+            $table->string('nama_pemesan');
+            $table->integer('jumlah_pelanggan');
+            $table->unsignedBigInteger('meja_id');
 
             $table->timestamps();
         });
@@ -27,6 +28,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pemesanans');
     }
 };
