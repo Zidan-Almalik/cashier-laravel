@@ -73,6 +73,13 @@
         </script> 
         @endif
 
+        @if (session()->has('error')) 
+        <script>
+            var notyf = new Notyf({dismissible: true})
+            notyf.error('{{ session('error') }}')
+        </script> 
+        @endif
+
         <script>
             /* Simple Alpine Image Viewer */
             document.addEventListener('alpine:init', () => {

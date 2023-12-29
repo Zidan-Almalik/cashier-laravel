@@ -23,10 +23,10 @@ return [
     ],
 
     'all_jenis' => [
-        'name' => 'All Jenis',
-        'index_title' => 'AllJenis List',
-        'new_title' => 'New Jenis',
-        'create_title' => 'Create Jenis',
+        'name' => 'Jenis',
+        'index_title' => 'Jenis',
+        'new_title' => 'Jenis Baru',
+        'create_title' => 'Buat Jenis',
         'edit_title' => 'Edit Jenis',
         'show_title' => 'Show Jenis',
         'inputs' => [
@@ -36,10 +36,10 @@ return [
     ],
 
     'kategoris' => [
-        'name' => 'Kategoris',
-        'index_title' => 'Kategoris List',
-        'new_title' => 'New Kategori',
-        'create_title' => 'Create Kategori',
+        'name' => 'Kategori',
+        'index_title' => 'List Kategori',
+        'new_title' => 'Kategori Baru',
+        'create_title' => 'Buat Kategori',
         'edit_title' => 'Edit Kategori',
         'show_title' => 'Show Kategori',
         'inputs' => [
@@ -48,10 +48,10 @@ return [
     ],
 
     'mejas' => [
-        'name' => 'Mejas',
-        'index_title' => 'Mejas List',
-        'new_title' => 'New Meja',
-        'create_title' => 'Create Meja',
+        'name' => 'Meja',
+        'index_title' => 'List Meja',
+        'new_title' => 'Meja Baru',
+        'create_title' => 'Buat Meja',
         'edit_title' => 'Edit Meja',
         'show_title' => 'Show Meja',
         'inputs' => [
@@ -62,10 +62,10 @@ return [
     ],
 
     'menus' => [
-        'name' => 'Menus',
-        'index_title' => 'Menus List',
-        'new_title' => 'New Menu',
-        'create_title' => 'Create Menu',
+        'name' => 'Menu',
+        'index_title' => 'List Menu',
+        'new_title' => 'Menu Baru',
+        'create_title' => 'Buat Menu',
         'edit_title' => 'Edit Menu',
         'show_title' => 'Show Menu',
         'inputs' => [
@@ -77,10 +77,10 @@ return [
     ],
 
     'pelanggans' => [
-        'name' => 'Pelanggans',
-        'index_title' => 'Pelanggans List',
-        'new_title' => 'New Pelanggan',
-        'create_title' => 'Create Pelanggan',
+        'name' => 'Pelanggan',
+        'index_title' => 'List Pelanggan',
+        'new_title' => 'Pelanggan Baru',
+        'create_title' => 'Buat Pelanggan',
         'edit_title' => 'Edit Pelanggan',
         'show_title' => 'Show Pelanggan',
         'inputs' => [
@@ -92,10 +92,10 @@ return [
     ],
 
     'pemesanans' => [
-        'name' => 'Pemesanans',
-        'index_title' => 'Pemesanans List',
-        'new_title' => 'New Pemesanan',
-        'create_title' => 'Create Pemesanan',
+        'name' => 'Pemesanan',
+        'index_title' => 'List Pemesanan',
+        'new_title' => 'Pemesanan Baru',
+        'create_title' => 'Buat Pemesanan',
         'edit_title' => 'Edit Pemesanan',
         'show_title' => 'Show Pemesanan',
         'inputs' => [
@@ -109,10 +109,10 @@ return [
     ],
 
     'stoks' => [
-        'name' => 'Stoks',
-        'index_title' => 'Stoks List',
-        'new_title' => 'New Stok',
-        'create_title' => 'Create Stok',
+        'name' => 'Stok',
+        'index_title' => 'List Stok',
+        'new_title' => 'Stok Baru',
+        'create_title' => 'Buat Stok',
         'edit_title' => 'Edit Stok',
         'show_title' => 'Show Stok',
         'inputs' => [
@@ -122,38 +122,17 @@ return [
     ],
 
     'users' => [
-        'name' => 'Users',
-        'index_title' => 'Users List',
-        'new_title' => 'New User',
-        'create_title' => 'Create User',
+        'name' => 'User',
+        'index_title' => 'List User',
+        'new_title' => 'User Baru',
+        'create_title' => 'Buat User',
         'edit_title' => 'Edit User',
         'show_title' => 'Show User',
         'inputs' => [
             'name' => 'Name',
             'email' => 'Email',
             'password' => 'Password',
-        ],
-    ],
-
-    'roles' => [
-        'name' => 'Roles',
-        'index_title' => 'Roles List',
-        'create_title' => 'Create Role',
-        'edit_title' => 'Edit Role',
-        'show_title' => 'Show Role',
-        'inputs' => [
-            'name' => 'Name',
-        ],
-    ],
-
-    'permissions' => [
-        'name' => 'Permissions',
-        'index_title' => 'Permissions List',
-        'create_title' => 'Create Permission',
-        'edit_title' => 'Edit Permission',
-        'show_title' => 'Show Permission',
-        'inputs' => [
-            'name' => 'Name',
+            'role' => 'Role'
         ],
     ],
 ];

@@ -22,122 +22,71 @@
                         </p>
                     </a>
                 </li>
-
+                @if (auth()->user()->getRole() === 1)
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon icon ion-md-apps"></i>
-                        <p>
-                            Apps
-                            <i class="nav-icon right icon ion-md-arrow-round-back"></i>
-                        </p>
+                    <a href="{{ route('all-jenis.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Jenis</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                            @can('view-any', App\Models\Jenis::class)
-                            <li class="nav-item">
-                                <a href="{{ route('all-jenis.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>All Jenis</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Kategori::class)
-                            <li class="nav-item">
-                                <a href="{{ route('kategoris.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Kategoris</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Meja::class)
-                            <li class="nav-item">
-                                <a href="{{ route('mejas.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Mejas</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Menu::class)
-                            <li class="nav-item">
-                                <a href="{{ route('menus.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Menus</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Pelanggan::class)
-                            <li class="nav-item">
-                                <a href="{{ route('pelanggans.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Pelanggans</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Pemesanan::class)
-                            <li class="nav-item">
-                                <a href="{{ route('pemesanans.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Pemesanans</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\Stok::class)
-                            <li class="nav-item">
-                                <a href="{{ route('stoks.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Stoks</p>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('view-any', App\Models\User::class)
-                            <li class="nav-item">
-                                <a href="{{ route('users.index') }}" class="nav-link">
-                                    <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                    <p>Users</p>
-                                </a>
-                            </li>
-                            @endcan
-                    </ul>
+                </li>    
+                <li class="nav-item">
+                    <a href="{{ route('kategoris.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Kategori</p>
+                    </a>
                 </li>
-
-                @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
-                    Auth::user()->can('view-any', Spatie\Permission\Models\Permission::class))
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon icon ion-md-key"></i>
-                        <p>
-                            Access Management
-                            <i class="nav-icon right icon ion-md-arrow-round-back"></i>
-                        </p>
+                    <a href="{{ route('mejas.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Meja</p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        @can('view-any', Spatie\Permission\Models\Role::class)
-                        <li class="nav-item">
-                            <a href="{{ route('roles.index') }}" class="nav-link">
-                                <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                <p>Roles</p>
-                            </a>
-                        </li>
-                        @endcan
-
-                        @can('view-any', Spatie\Permission\Models\Permission::class)
-                        <li class="nav-item">
-                            <a href="{{ route('permissions.index') }}" class="nav-link">
-                                <i class="nav-icon icon ion-md-radio-button-off"></i>
-                                <p>Permissions</p>
-                            </a>
-                        </li>
-                        @endcan
-                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('menus.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Menu</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('stoks.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Stok</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('users.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>User</p>
+                    </a>
+                </li>
+                @endif
+                
+                
+                
+                @if (auth()->user()->getRole() == 1 || auth()->user()->getRole() == 2)
+                <li class="nav-item">
+                    <a href="{{ route('pelanggans.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Pelanggan</p>
+                    </a>
+                </li>    
+                <li class="nav-item">
+                    <a href="{{ route('pemesanans.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Pemesanan</p>
+                    </a>
+                </li>
+                @endif
+                
+                @if (auth()->user()->getRole() == 2)
+                <li class="nav-item">
+                    <a href="{{ route('pemesanans.index') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Transaksi</p>
+                    </a>
                 </li>
                 @endif
                 @endauth
-
-                <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1//index.html" target="_blank" class="nav-link">
-                        <i class="nav-icon icon ion-md-help-circle-outline"></i>
-                        <p>Docs</p>
-                    </a>
-                </li>
 
                 @auth
                 <li class="nav-item">
