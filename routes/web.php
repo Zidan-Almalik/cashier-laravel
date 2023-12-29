@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MejaController;
@@ -59,6 +60,10 @@ Route::prefix('/')
         Route::middleware('role:1,2')->group(function () {
             Route::resource('pelanggans', PelangganController::class);
             Route::resource('pemesanans', PemesananController::class);
+        });
+
+        Route::middleware('role:2')->group(function () {
+            Route::get('transaction', [TransactionController::class, 'index'])->name('transactions.index');
         });
     });
 

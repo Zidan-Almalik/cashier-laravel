@@ -17,7 +17,6 @@
             name="harga"
             label="Harga"
             :value="old('harga', ($editing ? $menu->harga : ''))"
-            max="255"
             step="0.01"
             placeholder="Harga"
             required

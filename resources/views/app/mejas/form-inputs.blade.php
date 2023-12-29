@@ -26,8 +26,8 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.select name="status" label="Status">
             @php $selected = old('status', ($editing ? $meja->status : '')) @endphp
-            <option value="Dipesan" {{ $selected == 'Dipesan' ? 'selected' : '' }} >Dipesan</option>
-            <option value="Kosong" {{ $selected == 'Kosong' ? 'selected' : '' }} >Kosong</option>
+            <option value="dipesan" {{ $selected == 'dipesan' ? 'selected' : '' }} >Dipesan</option>
+            <option value="kosong" {{ $selected == 'kosong' ? 'selected' : '' }} >Kosong</option>
         </x-inputs.select>
     </x-inputs.group>
 </div>

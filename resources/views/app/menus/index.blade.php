@@ -25,11 +25,9 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                @can('create', App\Models\Menu::class)
                 <a href="{{ route('menus.create') }}" class="btn btn-primary">
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
-                @endcan
             </div>
         </div>
     </div>
@@ -47,7 +45,7 @@
                             <th class="text-left">
                                 @lang('crud.menus.inputs.nama_menu')
                             </th>
-                            <th class="text-right">
+                            <th class="text-left">
                                 @lang('crud.menus.inputs.harga')
                             </th>
                             <th class="text-left">
@@ -80,7 +78,6 @@
                                     aria-label="Row Actions"
                                     class="btn-group"
                                 >
-                                    @can('update', $menu)
                                     <a href="{{ route('menus.edit', $menu) }}">
                                         <button
                                             type="button"
@@ -89,7 +86,6 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('view', $menu)
                                     <a href="{{ route('menus.show', $menu) }}">
                                         <button
                                             type="button"
@@ -98,7 +94,6 @@
                                             <i class="icon ion-md-eye"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('delete', $menu)
                                     <form
                                         action="{{ route('menus.destroy', $menu) }}"
                                         method="POST"
@@ -112,7 +107,6 @@
                                             <i class="icon ion-md-trash"></i>
                                         </button>
                                     </form>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>

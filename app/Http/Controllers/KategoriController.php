@@ -20,8 +20,7 @@ class KategoriController extends Controller
 
         $kategoris = Kategori::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.kategoris.index', compact('kategoris', 'search'));
     }

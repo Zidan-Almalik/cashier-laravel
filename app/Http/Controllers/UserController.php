@@ -34,9 +34,7 @@ class UserController extends Controller
      */
     public function create(Request $request): View
     {
-
-
-        return view('app.users.create', compact('roles'));
+        return view('app.users.create');
     }
 
     /**
@@ -51,7 +49,6 @@ class UserController extends Controller
 
         $user = User::create($validated);
 
-        $user->syncRoles($request->roles);
 
         return redirect()
             ->route('users.edit', $user)
@@ -73,7 +70,7 @@ class UserController extends Controller
     public function edit(Request $request, User $user): View
     {
 
-        return view('app.users.edit', compact('user', 'roles'));
+        return view('app.users.edit', compact('user'));
     }
 
     /**
@@ -92,8 +89,6 @@ class UserController extends Controller
         }
 
         $user->update($validated);
-
-        $user->syncRoles($request->roles);
 
         return redirect()
             ->route('users.edit', $user)

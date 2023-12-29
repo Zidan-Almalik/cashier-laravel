@@ -80,7 +80,7 @@
                 
                 @if (auth()->user()->getRole() == 2)
                 <li class="nav-item">
-                    <a href="{{ route('pemesanans.index') }}" class="nav-link">
+                    <a href="{{ route('transactions.index') }}" class="nav-link">
                         <i class="nav-icon icon ion-md-radio-button-off"></i>
                         <p>Transaksi</p>
                     </a>

@@ -2,31 +2,31 @@
 
 return [
     'common' => [
-        'actions' => 'Actions',
-        'create' => 'Create',
+        'actions' => 'Aksi',
+        'create' => 'Tambah',
         'edit' => 'Edit',
-        'update' => 'Update',
-        'new' => 'New',
-        'cancel' => 'Cancel',
+        'update' => 'Edit',
+        'new' => 'Baru',
+        'cancel' => 'Batal',
         'attach' => 'Attach',
         'detach' => 'Detach',
-        'save' => 'Save',
-        'delete' => 'Delete',
+        'save' => 'Simpan',
+        'delete' => 'Hapus',
         'delete_selected' => 'Delete selected',
         'search' => 'Search...',
-        'back' => 'Back to Index',
-        'are_you_sure' => 'Are you sure?',
+        'back' => 'Kembali',
+        'are_you_sure' => 'Apakah kamu yakin',
         'no_items_found' => 'No items found',
-        'created' => 'Successfully created',
-        'saved' => 'Saved successfully',
-        'removed' => 'Successfully removed',
+        'created' => 'Data berhasil ditambahkan',
+        'saved' => 'Data berhasil disimpan',
+        'removed' => 'Data berhasil dihapus',
     ],
 
     'all_jenis' => [
         'name' => 'Jenis',
         'index_title' => 'Jenis',
         'new_title' => 'Jenis Baru',
-        'create_title' => 'Buat Jenis',
+        'create_title' => 'Tambah Jenis',
         'edit_title' => 'Edit Jenis',
         'show_title' => 'Show Jenis',
         'inputs' => [
@@ -39,7 +39,7 @@ return [
         'name' => 'Kategori',
         'index_title' => 'List Kategori',
         'new_title' => 'Kategori Baru',
-        'create_title' => 'Buat Kategori',
+        'create_title' => 'Tambah Kategori',
         'edit_title' => 'Edit Kategori',
         'show_title' => 'Show Kategori',
         'inputs' => [
@@ -51,7 +51,7 @@ return [
         'name' => 'Meja',
         'index_title' => 'List Meja',
         'new_title' => 'Meja Baru',
-        'create_title' => 'Buat Meja',
+        'create_title' => 'Tambah Meja',
         'edit_title' => 'Edit Meja',
         'show_title' => 'Show Meja',
         'inputs' => [
@@ -65,7 +65,7 @@ return [
         'name' => 'Menu',
         'index_title' => 'List Menu',
         'new_title' => 'Menu Baru',
-        'create_title' => 'Buat Menu',
+        'create_title' => 'Tambah Menu',
         'edit_title' => 'Edit Menu',
         'show_title' => 'Show Menu',
         'inputs' => [
@@ -80,7 +80,7 @@ return [
         'name' => 'Pelanggan',
         'index_title' => 'List Pelanggan',
         'new_title' => 'Pelanggan Baru',
-        'create_title' => 'Buat Pelanggan',
+        'create_title' => 'Tambah Pelanggan',
         'edit_title' => 'Edit Pelanggan',
         'show_title' => 'Show Pelanggan',
         'inputs' => [
@@ -95,7 +95,7 @@ return [
         'name' => 'Pemesanan',
         'index_title' => 'List Pemesanan',
         'new_title' => 'Pemesanan Baru',
-        'create_title' => 'Buat Pemesanan',
+        'create_title' => 'Tambah Pemesanan',
         'edit_title' => 'Edit Pemesanan',
         'show_title' => 'Show Pemesanan',
         'inputs' => [
@@ -112,7 +112,7 @@ return [
         'name' => 'Stok',
         'index_title' => 'List Stok',
         'new_title' => 'Stok Baru',
-        'create_title' => 'Buat Stok',
+        'create_title' => 'Tambah Stok',
         'edit_title' => 'Edit Stok',
         'show_title' => 'Show Stok',
         'inputs' => [
@@ -125,7 +125,7 @@ return [
         'name' => 'User',
         'index_title' => 'List User',
         'new_title' => 'User Baru',
-        'create_title' => 'Buat User',
+        'create_title' => 'Tambah User',
         'edit_title' => 'Edit User',
         'show_title' => 'Show User',
         'inputs' => [

@@ -25,14 +25,12 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                @can('create', App\Models\Pelanggan::class)
                 <a
                     href="{{ route('pelanggans.create') }}"
                     class="btn btn-primary"
                 >
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
-                @endcan
             </div>
         </div>
     </div>
@@ -77,7 +75,6 @@
                                     aria-label="Row Actions"
                                     class="btn-group"
                                 >
-                                    @can('update', $pelanggan)
                                     <a
                                         href="{{ route('pelanggans.edit', $pelanggan) }}"
                                     >
@@ -88,7 +85,6 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('view', $pelanggan)
                                     <a
                                         href="{{ route('pelanggans.show', $pelanggan) }}"
                                     >
@@ -99,7 +95,6 @@
                                             <i class="icon ion-md-eye"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('delete', $pelanggan)
                                     <form
                                         action="{{ route('pelanggans.destroy', $pelanggan) }}"
                                         method="POST"
@@ -113,7 +108,6 @@
                                             <i class="icon ion-md-trash"></i>
                                         </button>
                                     </form>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -125,11 +119,6 @@
                         </tr>
                         @endforelse
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="5">{!! $pelanggans->render() !!}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

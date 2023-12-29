@@ -25,11 +25,9 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                @can('create', App\Models\User::class)
                 <a href="{{ route('users.create') }}" class="btn btn-primary">
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
-                @endcan
             </div>
         </div>
     </div>
@@ -50,6 +48,9 @@
                             <th class="text-left">
                                 @lang('crud.users.inputs.email')
                             </th>
+                            <th class="text-left">
+                                @lang('crud.users.inputs.role')
+                            </th>
                             <th class="text-center">
                                 @lang('crud.common.actions')
                             </th>
@@ -60,13 +61,13 @@
                         <tr>
                             <td>{{ $user->name ?? '-' }}</td>
                             <td>{{ $user->email ?? '-' }}</td>
+                            <td>{{ $user->role ?? '-' }}</td>
                             <td class="text-center" style="width: 134px;">
                                 <div
                                     role="group"
                                     aria-label="Row Actions"
                                     class="btn-group"
                                 >
-                                    @can('update', $user)
                                     <a href="{{ route('users.edit', $user) }}">
                                         <button
                                             type="button"
@@ -75,7 +76,6 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('view', $user)
                                     <a href="{{ route('users.show', $user) }}">
                                         <button
                                             type="button"
@@ -84,7 +84,6 @@
                                             <i class="icon ion-md-eye"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('delete', $user)
                                     <form
                                         action="{{ route('users.destroy', $user) }}"
                                         method="POST"
@@ -98,7 +97,6 @@
                                             <i class="icon ion-md-trash"></i>
                                         </button>
                                     </form>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -110,11 +108,6 @@
                         </tr>
                         @endforelse
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3">{!! $users->render() !!}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

@@ -28,7 +28,7 @@ class UserUpdateRequest extends FormRequest
                 'email',
             ],
             'password' => ['nullable'],
-            'roles' => 'array',
+            'role' => ['required', 'numeric'],
         ];
     }
 }

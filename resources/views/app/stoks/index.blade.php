@@ -25,11 +25,9 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                @can('create', App\Models\Stok::class)
                 <a href="{{ route('stoks.create') }}" class="btn btn-primary">
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
-                @endcan
             </div>
         </div>
     </div>
@@ -44,7 +42,7 @@
                 <table class="table table-borderless table-hover">
                     <thead>
                         <tr>
-                            <th class="text-right">
+                            <th class="text-left">
                                 @lang('crud.stoks.inputs.jumlah')
                             </th>
                             <th class="text-left">
@@ -68,7 +66,6 @@
                                     aria-label="Row Actions"
                                     class="btn-group"
                                 >
-                                    @can('update', $stok)
                                     <a href="{{ route('stoks.edit', $stok) }}">
                                         <button
                                             type="button"
@@ -77,7 +74,6 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('view', $stok)
                                     <a href="{{ route('stoks.show', $stok) }}">
                                         <button
                                             type="button"
@@ -86,7 +82,6 @@
                                             <i class="icon ion-md-eye"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('delete', $stok)
                                     <form
                                         action="{{ route('stoks.destroy', $stok) }}"
                                         method="POST"
@@ -100,7 +95,6 @@
                                             <i class="icon ion-md-trash"></i>
                                         </button>
                                     </form>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -112,11 +106,6 @@
                         </tr>
                         @endforelse
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3">{!! $stoks->render() !!}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

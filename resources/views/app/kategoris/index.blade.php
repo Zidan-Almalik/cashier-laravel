@@ -25,14 +25,12 @@
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                @can('create', App\Models\Kategori::class)
                 <a
                     href="{{ route('kategoris.create') }}"
                     class="btn btn-primary"
                 >
                     <i class="icon ion-md-add"></i> @lang('crud.common.create')
                 </a>
-                @endcan
             </div>
         </div>
     </div>
@@ -65,7 +63,6 @@
                                     aria-label="Row Actions"
                                     class="btn-group"
                                 >
-                                    @can('update', $kategori)
                                     <a
                                         href="{{ route('kategoris.edit', $kategori) }}"
                                     >
@@ -76,7 +73,6 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('view', $kategori)
                                     <a
                                         href="{{ route('kategoris.show', $kategori) }}"
                                     >
@@ -87,7 +83,6 @@
                                             <i class="icon ion-md-eye"></i>
                                         </button>
                                     </a>
-                                    @endcan @can('delete', $kategori)
                                     <form
                                         action="{{ route('kategoris.destroy', $kategori) }}"
                                         method="POST"
@@ -101,7 +96,6 @@
                                             <i class="icon ion-md-trash"></i>
                                         </button>
                                     </form>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>
@@ -113,11 +107,6 @@
                         </tr>
                         @endforelse
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="2">{!! $kategoris->render() !!}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
