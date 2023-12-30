@@ -71,6 +71,7 @@ return [
         'inputs' => [
             'nama_menu' => 'Nama Menu',
             'harga' => 'Harga',
+            'deskripsi' => 'Deskripsi',
             'image' => 'Image',
             'jenis_id' => 'Jenis',
         ],

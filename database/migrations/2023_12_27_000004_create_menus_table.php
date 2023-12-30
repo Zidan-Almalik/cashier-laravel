@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('nama_menu');
             $table->double('harga');
+            $table->string('deskripsi');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('jenis_id');
 

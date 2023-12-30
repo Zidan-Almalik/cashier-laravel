@@ -49,6 +49,9 @@
                                 @lang('crud.menus.inputs.harga')
                             </th>
                             <th class="text-left">
+                                @lang('crud.menus.inputs.deskripsi')
+                            </th>
+                            <th class="text-left">
                                 @lang('crud.menus.inputs.image')
                             </th>
                             <th class="text-left">
@@ -64,6 +67,7 @@
                         <tr>
                             <td>{{ $menu->nama_menu ?? '-' }}</td>
                             <td>{{ $menu->harga ?? '-' }}</td>
+                            <td>{{ $menu->deskripsi ?? '-' }}</td>
                             <td>
                                 <x-partials.thumbnail
                                     src="{{ $menu->image ? \Storage::url($menu->image) : '' }}"

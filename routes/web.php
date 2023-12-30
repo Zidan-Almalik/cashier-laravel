@@ -64,6 +64,7 @@ Route::prefix('/')
 
         Route::middleware('role:2')->group(function () {
             Route::get('transaction', [TransactionController::class, 'index'])->name('transactions.index');
+            Route::post('tambah-transaksi', [TransactionController::class, 'tambahTransaksi'])->name('tambah-transaksi');
         });
     });
 

@@ -21,6 +21,10 @@
                     <span>{{ $menu->harga ?? '-' }}</span>
                 </div>
                 <div class="mb-4">
+                    <h5>@lang('crud.menus.inputs.deskripsi')</h5>
+                    <span>{{ $menu->deskripsi ?? '-' }}</span>
+                </div>
+                <div class="mb-4">
                     <h5>@lang('crud.menus.inputs.image')</h5>
                     <x-partials.thumbnail
                         src="{{ $menu->image ? \Storage::url($menu->image) : '' }}"

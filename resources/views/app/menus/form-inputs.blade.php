@@ -24,6 +24,13 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
+        <x-inputs.textarea name="alamat" label="Alamat" maxlength="255" required
+            >{{ old('alamat', ($editing ? $menu->deskripsi : ''))
+            }}</x-inputs.textarea
+        >
+    </x-inputs.group>
+
+    <x-inputs.group class="col-sm-12">
         <div
             x-data="imageViewer('{{ $editing && $menu->image ? \Storage::url($menu->image) : '' }}')"
         >

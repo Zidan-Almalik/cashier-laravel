@@ -11,7 +11,7 @@ class Menu extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['nama_menu', 'harga', 'image', 'jenis_id'];
+    protected $fillable = ['nama_menu', 'harga', 'deskripsi', 'image', 'jenis_id'];
 
     protected $searchableFields = ['*'];
 

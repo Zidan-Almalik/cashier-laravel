@@ -22,6 +22,7 @@ class MenuStoreRequest extends FormRequest
         return [
             'nama_menu' => ['required', 'max:255', 'string'],
             'harga' => ['required', 'numeric'],
+            'deskripsi' => ['required', 'string'],
             'image' => ['nullable', 'image', 'max:1024'],
             'jenis_id' => ['required', 'exists:jenis,id'],
         ];
