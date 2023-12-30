@@ -55,6 +55,11 @@ Route::prefix('/')
 
             Route::resource('stoks', StokController::class);
             Route::resource('users', UserController::class);
+
+            Route::get('/data-transaksi', [TransactionController::class, 'data'])->name('data.transaksi');
+            Route::get('/data-transaksi/{data}', [TransactionController::class, 'data'])->name('data.transaksi.show');
+            Route::put('/data-transaksi/{data}', [TransactionController::class, 'edit'])->name('data.transaksi.edit');
+            Route::delete('/data-transaksi/{data}', [TransactionController::class, 'destroy'])->name('data.transaksi.destroy');
         });
 
         Route::middleware('role:1,2')->group(function () {
@@ -65,9 +70,11 @@ Route::prefix('/')
         Route::middleware('role:2')->group(function () {
             Route::get('transaction', [TransactionController::class, 'index'])->name('transactions.index');
             Route::post('tambah-transaksi', [TransactionController::class, 'tambahTransaksi'])->name('tambah-transaksi');
+            
         });
     });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('faktur/{id}', [TransactionController::class, 'faktur']);

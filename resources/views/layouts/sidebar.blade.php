@@ -59,6 +59,12 @@
                         <p>User</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('data.transaksi') }}" class="nav-link">
+                        <i class="nav-icon icon ion-md-radio-button-off"></i>
+                        <p>Data Transaksi</p>
+                    </a>
+                </li>
                 @endif
                 
                 

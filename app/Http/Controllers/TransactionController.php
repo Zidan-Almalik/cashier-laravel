@@ -48,6 +48,7 @@ class TransactionController extends Controller
             DB::commit();
 
             return response()->json([
+                'transaksi' => $transaksi,
                 'message' => 'Transaksi berhasil ditambahkan'
             ]);
 
@@ -57,4 +58,35 @@ class TransactionController extends Controller
         }
     }
 
+    public function faktur($id) {
+
+        $transaksi = Transaksis::with('transaksiDetails')->findOrFail($id);
+        $order =[
+            'tanggal' => $transaksi->kode_masuk,
+            'total' => $transaksi->total_harga,
+            'metode_pembayaran' => $transaksi->metode_pembayaran,
+            'keterangan' => $transaksi->keterangan,
+            'details' => $transaksi->transaksiDetails
+        ];
+        return view('app.transactions.faktur', compact('order'));
+    }
+
+
+    public function data() {
+        $data = Transaksis::all();
+
+        return view('app.transactions.data', compact('data'));
+    }
+
+    public function edit(Transaksis $data) {
+
+    }
+    public function destroy(Request $request, Transaksis $data)
+    {
+        $data->delete();
+
+        return redirect()
+        ->route('data.transaksi')
+        ->withSuccess(__('crud.common.removed'));
+    }
 }

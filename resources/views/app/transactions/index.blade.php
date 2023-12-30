@@ -256,6 +256,10 @@
             const methods = Array.from(document.querySelectorAll(".methods"))
             methods.map(item => {
                 item.addEventListener("click", () => {
+                    methods.map(method => {
+                        method.classList.remove("bg-primary")
+                    })
+                    item.classList.add('bg-primary')
                     method = item.id
                 })
             })
@@ -281,15 +285,29 @@
                     },
                     body: JSON.stringify(dataAPI)
                 }
-                console.log(dataAPI)
+
                 fetch(`{{ url('tambah-transaksi') }}`, option)
-                .then(response => {
-                    console.log(response)
-                })
-                .catch(error => {
-                    console.log(error)
-                })
-            })            
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        let newWindow = window.open(
+                            `{{ config('app.url') }}/faktur/${data.transaksi.id}`,
+                            '_blank');
+
+                        newWindow.focus()
+
+                        setTimeout(function() {
+                            document.location.reload(true);
+                        }, 3000);
+                    })
+                    .catch(error => {
+                        alert('Transaksi Gagal! Silahkan refresh dan coba lagi.')
+                    });
+            })
 
         })
     </script>
