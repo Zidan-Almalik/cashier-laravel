@@ -57,8 +57,8 @@ Route::prefix('/')
             Route::resource('users', UserController::class);
 
             Route::get('/data-transaksi', [TransactionController::class, 'data'])->name('data.transaksi');
-            Route::get('/data-transaksi/{data}', [TransactionController::class, 'data'])->name('data.transaksi.show');
-            Route::put('/data-transaksi/{data}', [TransactionController::class, 'edit'])->name('data.transaksi.edit');
+            Route::get('/data-transaksi/{data}', [TransactionController::class, 'edit'])->name('data.transaksi.edit');
+            Route::put('/data-transaksi/{data}', [TransactionController::class, 'update'])->name('data.transaksi.update');
             Route::delete('/data-transaksi/{data}', [TransactionController::class, 'destroy'])->name('data.transaksi.destroy');
         });
 

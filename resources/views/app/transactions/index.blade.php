@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@push('styles')
-    s
-@endpush
+
 
 @section('content')
     <div class="d-flex flex-wrap-reverse align-items-end justify-content-start">

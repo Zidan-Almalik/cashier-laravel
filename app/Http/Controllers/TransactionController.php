@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\TransaksiDetail;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\TransaksiRequest;
+use Illuminate\Support\Facades\Validator;
 
 class TransactionController extends Controller
 {
@@ -79,6 +80,29 @@ class TransactionController extends Controller
     }
 
     public function edit(Transaksis $data) {
+        return view ('app.transactions.edit', compact('data'));
+    }
+
+    public function update(Request $request, Transaksis $data) 
+    {   
+        $validator = Validator::make($request->all(), [
+            'tanggal' => ['required', 'date'],
+            'total_harga' => ['required', 'numeric'],
+            'metode_pembayaran' => ['required', 'in:Cash,Qris'],
+            'keterangan' => ['required', 'string'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', $validator->errors()->first());
+        }
+
+        $validated = $validator->validated();
+        
+        $data->update($validated);
+
+        return redirect()
+        ->route('data.transaksi.edit', $data)
+        ->withSuccess(__('crud.common.saved'));
 
     }
     public function destroy(Request $request, Transaksis $data)

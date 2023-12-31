@@ -53,16 +53,7 @@
                                             <i class="icon ion-md-create"></i>
                                         </button>
                                     </a>
-                                    <a
-                                        href="{{ route('data.transaksi.show', $d) }}"
-                                    >
-                                        <button
-                                            type="button"
-                                            class="btn btn-light"
-                                        >
-                                            <i class="icon ion-md-eye"></i>
-                                        </button>
-                                    </a>
+                                   
                                     <form
                                         action="{{ route('data.transaksi.destroy', $d) }}"
                                         method="POST"
