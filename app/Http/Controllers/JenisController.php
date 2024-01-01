@@ -22,8 +22,7 @@ class JenisController extends Controller
 
         $allJenis = Jenis::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.all_jenis.index', compact('allJenis', 'search'));
     }

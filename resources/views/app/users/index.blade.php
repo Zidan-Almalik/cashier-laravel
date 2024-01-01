@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="searchbar mt-0 mb-4">
+        <h1>User</h1>
         <div class="row">
             <div class="col-md-6">
                 <form>

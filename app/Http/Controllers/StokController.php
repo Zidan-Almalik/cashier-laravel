@@ -22,8 +22,7 @@ class StokController extends Controller
 
         $stoks = Stok::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.stoks.index', compact('stoks', 'search'));
     }

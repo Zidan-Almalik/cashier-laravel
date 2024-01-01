@@ -21,8 +21,7 @@ class MejaController extends Controller
 
         $mejas = Meja::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.mejas.index', compact('mejas', 'search'));
     }

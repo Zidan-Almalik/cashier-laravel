@@ -21,8 +21,7 @@ class PelangganController extends Controller
 
         $pelanggans = Pelanggan::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.pelanggans.index', compact('pelanggans', 'search'));
     }

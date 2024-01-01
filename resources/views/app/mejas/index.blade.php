@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="searchbar mt-0 mb-4">
+        <h1>Meja</h1>
         <div class="row">
             <div class="col-md-6">
                 <form>
@@ -108,11 +109,6 @@
                         </tr>
                         @endforelse
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="4">{!! $mejas->render() !!}</td>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>

@@ -23,8 +23,7 @@ class MenuController extends Controller
 
         $menus = Menu::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.menus.index', compact('menus', 'search'));
     }

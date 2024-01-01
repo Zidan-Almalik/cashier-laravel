@@ -23,8 +23,7 @@ class UserController extends Controller
 
         $users = User::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
+            ->get();
 
         return view('app.users.index', compact('users', 'search'));
     }

@@ -22,9 +22,7 @@ class PemesananController extends Controller
 
         $pemesanans = Pemesanan::search($search)
             ->latest()
-            ->paginate(5)
-            ->withQueryString();
-
+            ->get();
         return view('app.pemesanans.index', compact('pemesanans', 'search'));
     }
 
